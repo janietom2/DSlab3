@@ -1,6 +1,6 @@
 // Lab3
 // Name: Stocks
-// Develop by: Jose Nieto (Partially)
+// Develop by: Jose Nieto (Partially) | Professor/TA (Partially)
 // <summary>
 //  Stock is a java class that initialize the stock characteristics and some of the functions like sum and update values for
 //  and individual stock. It contains getters and setters to initialize values and return them too.
@@ -91,7 +91,7 @@ public class Stock {
   // </summary>
   public void updateValue(){
     double multiplier =  1.05 + (new Random().nextGaussian() * 0.25);
-
+     setCurrentPrice(multiplier);
   }
 }
 

@@ -50,7 +50,7 @@ public class Portfolio {
 
   // update each individual stock
   public void update(){
-    // implement
+
   }
 
 
