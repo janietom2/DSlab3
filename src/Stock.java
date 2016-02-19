@@ -17,6 +17,7 @@ public class Stock {
   private double purchasePrice;
   private double currentPrice;
 
+
   //Constructor
   public Stock(){
 
@@ -91,7 +92,7 @@ public class Stock {
   // </summary>
   public void updateValue(){
     double multiplier =  1.05 + (new Random().nextGaussian() * 0.25);
-     setCurrentPrice(multiplier);
+     setCurrentPrice(getCurrentPrice()*multiplier);
   }
 }
 
