@@ -6,32 +6,33 @@
 //  a counter for the value of all the portfolio, will set the value (Static value/initial value) for the stocks, and also
 //  update the value for the portfolio
 // </summary>
-
+import java.util.Random;
 public class Portfolio {
 
   //Array of Stocks objects
   Stock[] stocks;
 
-
   // create the array and create the individual stocks with the initial values
   public Portfolio(int numberOfStocks){
+        stocks = initializePortfolio(numberOfStocks);
 
+      //This will set the number of the purchase and current price to 100$ USD
+      for (int i = 0; i < stocks.length; i++){
+          stocks[i].setPurchasePrice(100);
+          stocks[i].setCurrentPrice(100);
+          stocks[i].setNumShares(10000/stocks.length);
+      }
+
+  }
+
+  public Stock[] initializePortfolio(int n){
+      Stock[] temp = new Stock[n];
+      return temp;
   }
 
   //This will count the stocks, it will return the number of stocks. Which is the size of the array of the stocks
   public int countStocks(Stock[] stocks){
       return stocks.length;
-  }
-
-  public Stock[] stockPurchasePrice(Stock[] stocks){
-    //This is a temporal Stock-type variable to hold the values and then return them
-    Stock temp[] = new Stock[stocks.length];
-
-    for (int i = 0; i < stocks.length; i++){
-        temp[i].setPurchasePrice(100);
-        temp[i].setCurrentPrice(100);
-    }
-    return temp;
   }
 
  //Return the sum/value of all stocks in the array for this portfolio
@@ -47,9 +48,12 @@ public class Portfolio {
 
      return sum;
  }
-
-  // update each individual stock
+    
+  //Updates all after one year
   public void update(){
+      for (int i = 0; i < stocks.length; i++){
+          stocks[i].updateValue();
+      }
 
   }
 
