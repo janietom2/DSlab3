@@ -14,26 +14,17 @@ public class Portfolio {
 
   // create the array and create the individual stocks with the initial values
   public Portfolio(int numberOfStocks){
-        stocks = initializePortfolio(numberOfStocks);
+        Stock[] temp = new Stock[numberOfStocks];
 
       //This will set the number of the purchase and current price to 100$ USD
-      for (int i = 0; i < stocks.length; i++){
-          stocks[i].setPurchasePrice(100);
-          stocks[i].setCurrentPrice(100);
-          stocks[i].setNumShares(10000/stocks.length);
+      for (int i = 0; i < temp.length; i++){
+          temp[i].setPurchasePrice(100);
+          temp[i].setCurrentPrice(100);
+          temp[i].setNumShares(10000/temp.length);
       }
 
   }
 
-  public Stock[] initializePortfolio(int n){
-      Stock[] temp = new Stock[n];
-      return temp;
-  }
-
-  //This will count the stocks, it will return the number of stocks. Which is the size of the array of the stocks
-  public int countStocks(Stock[] stocks){
-      return stocks.length;
-  }
 
  //Return the sum/value of all stocks in the array for this portfolio
  public double totalValue(Stock[] stocks){
