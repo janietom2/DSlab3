@@ -6,7 +6,6 @@
 //  a counter for the value of all the portfolio, will set the value (Static value/initial value) for the stocks, and also
 //  update the value for the portfolio
 // </summary>
-import java.util.Random;
 public class Portfolio {
 
   //Array of Stocks objects
@@ -14,27 +13,25 @@ public class Portfolio {
 
   // create the array and create the individual stocks with the initial values
   public Portfolio(int numberOfStocks){
-        Stock[] temp = new Stock[numberOfStocks];
+      stocks = new Stock[numberOfStocks];
 
       //This will set the number of the purchase and current price to 100$ USD
-      for (int i = 0; i < temp.length; i++){
-          temp[i].setPurchasePrice(100);
-          temp[i].setCurrentPrice(100);
-          temp[i].setNumShares(10000/temp.length);
-      }
+      for(int i = 0; i < stocks.length; i++){
+          stocks[i] = new Stock();
+          stocks[i].setPurchasePrice(100);
+          stocks[i].setCurrentPrice(100);
+          stocks[i].setNumShares(10000 / stocks.length);
 
+      }
   }
 
-
  //Return the sum/value of all stocks in the array for this portfolio
- public double totalValue(Stock[] stocks){
-     //This is a temporal Stock-type variable to hold the values and then return them
-     Stock temp = new Stock();
+ public double totalValue(){
      //Initialize the sum double-type variable, this will get into a for loop to sum each element of the array
      double sum = 0;
 
      for (int i = 0; i < stocks.length; i++){
-        sum += temp.getCurrentPrice();
+        sum += stocks[i].getCurrentValue();
      }
 
      return sum;
@@ -47,6 +44,5 @@ public class Portfolio {
       }
 
   }
-
 
 }
