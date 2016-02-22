@@ -1,4 +1,3 @@
-//;import java.util.*;
 import java.text.*;
 import java.text.DecimalFormat;
 import java.util.Scanner;
@@ -45,9 +44,10 @@ public class Simulation {
               else if(max < p1.totalValue()){
                   max = p1.totalValue();
               }
-              System.out.println("Average => " + yearTotalValue/100);
-              System.out.println("Min => " + min);
-              System.out.println("Max => " + max);
+              System.out.println("Average => " + df.format(yearTotalValue/100));
+              System.out.println("Min => " + df.format(min));
+              System.out.println("Max => " + df.format(max));
+              System.out.println("Percent of change: " + df.format(((min/max)*100))+"%");
               System.out.println("---------------------------------");
           }
 
@@ -55,3 +55,19 @@ public class Simulation {
 
   }
 }
+/*
+* -- Observation ---
+*
+* My Observations about the experiment being looped 100 times and the results on it that
+* are during 30 years are that the averages, min and max can change depending on a single
+* mathematical operation, which is the update calculation. Because the given operation in the
+* Stock class (for each individual in the array) ( UpdateValue ) contains a Random number on the
+* multiplication between factors like the current price and number of shares, the final average
+* changes. If we can think of this like 100 people having stocks during a 30 years period at same
+ * initial value we can observe that some of the investors can have different averages and earnings
+ * When different stocks are given, like 1 or 5, it increases the value of them. When 5 stocks
+ * are given the values are certainly high, however when 10 or 100 is given, the values goes even
+  * further. The conclusion is that more stocks more earning the investor will have, also this
+  * includes all the updated values that can go better than other investors.
+  *
+* */

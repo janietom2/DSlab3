@@ -1,11 +1,11 @@
-/** Lab3
-   Name: Stocks
-  Develop by: Jose Nieto (Partially) | Professor/TA (Partially)
-  <summary>
-  Stock is a java class that initialize the stock characteristics and some of the functions like sum and update values for
-  and individual stock. It contains getters and setters to initialize values and return them too.
+/*Lab3
+  *Name: Stocks
+  *Develop by: Jose Nieto (Partially) | Professor/TA (Partially)
+  *<summary>
+  *Stock is a java class that initialize the stock characteristics and some of the functions like sum and update values for
+  *and individual stock. It contains getters and setters to initialize values and return them too.
  </summary>
- **/
+ */
 
 import java.util.Random;
 
@@ -78,21 +78,23 @@ public class Stock {
       return currentPrice;
   }
 
-  //<summary>
-    // returns the current value of this stock
-    // This will return the Current Value for the stock by adding Number of shares times the current price
-  //</summary>
+  /*
+  *<summary>
+     *returns the current value of this stock
+    *This will return the Current Value for the stock by adding Number of shares times the current price
+  *</summary>
+  */
   double getCurrentValue(){
     //return numShares + currentPrice;
     return getNumShares() * getCurrentPrice();
   }
 
-  /**
+  /*
     <summary>
     Generate Percentage change using random numbers. It will update the value of the current stock. This will contain
     a double variable
     </summary>
-   **/
+   */
   public void updateValue(){
     double multiplier =  1.05 + (new Random().nextGaussian() * 0.25);
      setCurrentPrice(getCurrentPrice()*multiplier);

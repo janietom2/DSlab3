@@ -1,13 +1,13 @@
-/**
- Lab3
- Name: Portfolio
- Develop by: Jose Nieto (Partially)
- <summary>
-  This class porfolio will hold some calculation for array of stocks. This will include a counter for the array of stacks,
+/*
+ *Lab3
+ *Name: Portfolio
+ *Develop by: Jose Nieto (Partially)
+ *<summary>
+ *This class porfolio will hold some calculation for array of stocks. This will include a counter for the array of stacks,
  a counter for the value of all the portfolio, will set the value (Static value/initial value) for the stocks, and also
   update the value for the portfolio
-</summary>
-**/
+ *</summary>
+*/
 public class Portfolio {
 
   //Array of Stocks objects
